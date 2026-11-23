@@ -129,6 +129,3 @@ Built with ☕, questionable sleep schedules, and AI assistance during the Whack
 
 ---
 
-## License
-
-MIT License
