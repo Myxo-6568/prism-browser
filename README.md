@@ -1,4 +1,4 @@
-# Distill
+# Prism Browser
 
 > Turn hours of research into minutes of reading.
 
