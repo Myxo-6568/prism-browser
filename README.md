@@ -2,7 +2,7 @@
 
 > Turn hours of research into minutes of reading.
 
-Distill is an AI-powered research browser that automatically gathers information from multiple sources, condenses it into structured knowledge pages, and presents the results in an editable format directly inside the browser.
+Prism is an AI-powered research browser that automatically gathers information from multiple sources, condenses it into structured knowledge pages, and presents the results in an editable format directly inside the browser.
 
 
 
@@ -18,13 +18,13 @@ When researching a topic, users often:
 - Struggle to organize findings
 - Waste time manually creating notes
 
-Distill simplifies this process by acting as an intelligent research assistant built directly into the browsing experience.
+Prism simplifies this process by acting as an intelligent research assistant built directly into the browsing experience.
 
 ---
 
 ## Solution
 
-Distill allows users to:
+Prism allows users to:
 
 1. Browse normally
 2. Enter a topic or query
