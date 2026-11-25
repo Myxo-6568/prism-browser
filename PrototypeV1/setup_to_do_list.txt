@@ -94,7 +94,11 @@ TROUBLESHOOTING & NOTES
 ------------------------------------------------------------------------
 - 503 Server Error: If you receive a "503 UNAVAILABLE" message, Google's 
   free API servers are experiencing temporary high traffic. Wait 5-10 
-  seconds and try clicking Distill again.
+  seconds and try clicking Distill again. 
+                              OR
+Open distiller.py, navigate to summarize_text_with_gemini().
+navigate to "response" within the definition and change the model to gemini-2.5-flash-lite.
+
 - Missing Key Error: Make sure `.env` is saved in the main folder and that 
   `load_dotenv()` is included at the top of `distiller.py`.
 ========================================================================
