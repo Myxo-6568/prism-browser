@@ -1,0 +1,100 @@
+========================================================================
+             PROJECT SETUP & ONBOARDING TO-DO LIST
+========================================================================
+
+Welcome to the team! Follow these step-by-step instructions to set up 
+and run the PyQt6 Distill Browser on your machine.
+
+------------------------------------------------------------------------
+STEP 1: Clone or Open the Project Folder
+------------------------------------------------------------------------
+Make sure you are in the root directory of the project folder 
+(where test.py and distiller.py are located).
+
+Project Structure:
+  browser_project/
+  ├── test.py
+  ├── distiller.py
+  ├── SETUP_TODO.txt
+  └── .env              <-- You will create this in Step 4
+
+------------------------------------------------------------------------
+STEP 2: Create a Virtual Environment (venv)
+------------------------------------------------------------------------
+[ ] Run the command corresponding to your OS in your terminal/command prompt:
+
+  - macOS / Linux:
+      python3 -m venv venv
+
+  - Windows (PowerShell or Command Prompt):
+      python -m venv venv
+
+------------------------------------------------------------------------
+STEP 3: Activate the Virtual Environment
+------------------------------------------------------------------------
+[ ] Activate the environment:
+
+  - macOS / Linux (Terminal):
+      source venv/bin/activate
+
+  - Windows (PowerShell):
+      .\venv\Scripts\Activate.ps1
+      (Note: If execution is blocked, run: Set-ExecutionPolicy Unrestricted -Scope Process)
+
+  - Windows (Command Prompt - cmd.exe):
+      .\venv\Scripts\activate.bat
+
+  * Verification: You should see (venv) at the start of your terminal line.
+
+------------------------------------------------------------------------
+STEP 4: Install Required Packages
+------------------------------------------------------------------------
+[ ] Ensure your virtual environment is active, then install all dependencies:
+
+  - macOS / Linux / Windows:
+      pip install PyQt6 PyQt6-WebEngine beautifulsoup4 google-genai python-dotenv
+
+------------------------------------------------------------------------
+STEP 5: Create and Configure the .env File
+------------------------------------------------------------------------
+[ ] Create a file named `.env` in the root folder of the project.
+    (Right next to test.py and distiller.py—do NOT put it inside venv/).
+
+[ ] Get a free Gemini API key from Google AI Studio:
+    https://aistudio.google.com/ (Go to "API keys" -> "Create API key").
+
+[ ] Open `.env` in a text editor and add your key:
+
+    GEMINI_API_KEY=AIzaSyYourActualApiKeyHere
+
+    * Important Rules:
+      - No spaces around the `=` sign.
+      - Do NOT put quotes unless necessary.
+      - Never commit your `.env` file to Git!
+
+------------------------------------------------------------------------
+STEP 6: Run and Test the Application
+------------------------------------------------------------------------
+[ ] Run the browser application:
+
+  - macOS / Linux:
+      python3 test.py
+
+  - Windows:
+      python test.py
+
+[ ] Test the Distill Feature:
+    1. Open any article webpage (e.g., a Wikipedia page).
+    2. Wait for the page to fully load.
+    3. Click the "Distill" button on the toolbar.
+    4. A new tab should open with an AI-generated summary of the page.
+
+------------------------------------------------------------------------
+TROUBLESHOOTING & NOTES
+------------------------------------------------------------------------
+- 503 Server Error: If you receive a "503 UNAVAILABLE" message, Google's 
+  free API servers are experiencing temporary high traffic. Wait 5-10 
+  seconds and try clicking Distill again.
+- Missing Key Error: Make sure `.env` is saved in the main folder and that 
+  `load_dotenv()` is included at the top of `distiller.py`.
+========================================================================
