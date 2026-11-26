@@ -1,0 +1,1 @@
+"""Prism browser application package."""
