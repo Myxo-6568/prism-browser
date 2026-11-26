@@ -1,0 +1,71 @@
+========================================================================
+                    PRISM BROWSER SETUP CHECKLIST
+========================================================================
+
+Requirements
+------------
+- Python 3.10 or newer
+- A desktop environment supported by PyQt6 and Qt WebEngine
+- A Gemini API key to use Distill and Spectrum AI features
+
+1. Create and activate a virtual environment
+
+   macOS / Linux:
+     python3 -m venv .venv
+     source .venv/bin/activate
+
+   Windows PowerShell:
+     py -m venv .venv
+     .\.venv\Scripts\Activate.ps1
+
+2. Install dependencies from the project root
+
+     python -m pip install -r requirements.txt
+
+3. Configure Gemini (optional for ordinary browsing)
+
+   Create a `.env` file next to `test.py`, with:
+
+     GEMINI_API_KEY=your_key_here
+
+   Get a key from https://aistudio.google.com/. Keep `.env` private; it is
+   excluded by the project's `.gitignore`. Prism reads the key from this file
+   for Distill and Spectrum chat. Do not paste the key into source code.
+
+4. Run Prism
+
+     python test.py
+
+   Run the command from the project root. The browser window can be closed
+   normally; the persistent WebEngine profile restores browsing session data
+   on a later launch.
+
+5. Try the main features
+
+   - Use the + button or Ctrl/Cmd+T to open a tab. Ctrl/Cmd+L focuses the
+     address bar; Ctrl/Cmd+W closes the current tab.
+   - Use a tab's context menu to pin/unpin it, bookmark it, or create a
+     Spectrum from the page.
+   - Select Distill to choose tabs and summarize or compare them. Results are
+     saved in Library.
+   - Create a Spectrum from a page, reorder and edit blocks, add images or
+     annotations, and use the chat panel. Browser actions requested by chat
+     require confirmation before they open or navigate tabs.
+
+Application data
+----------------
+Prism keeps its SQLite library, settings, images and persistent web profile
+in the operating system's application-data directory. These files are not
+stored in the project folder. Use the Library to search or delete saved
+distillations and saved Spectrums.
+
+Troubleshooting
+---------------
+- If an AI request reports a missing key, check that `.env` is in the project
+  root, the variable is spelled `GEMINI_API_KEY`, and the value is valid.
+- Gemini 429/503 errors are retried; service-side availability and rate limits
+  may still prevent a request from succeeding.
+- Some websites may show CAPTCHAs or restrict embedded browsers. Prism does
+  not solve or bypass CAPTCHAs.
+- If Qt WebEngine cannot start, install the platform's Qt/PyQt runtime
+  dependencies and run Prism in a desktop session.
